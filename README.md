@@ -1,22 +1,32 @@
-# Instruções
 
-- Siga fielmente a entrada e a saída solicitadas.
+# Imagens Híbridas com Filtros de Frequência 
 
-# Tarefa 7
+Este projeto implementa a geração de imagens híbridas, uma técnica que combina componentes de baixa frequência de uma imagem com componentes de alta frequência de outra. Dependendo da distância de visualização, o observador percebe uma imagem ou outra.
 
-Nesta tarefa você deverá implementar a técnica de imagens híbridas (https://vision.csee.wvu.edu/classes/cs674-f17/assignments/assignment1/OlivaTorralb_Hybrid_Siggraph06.pdf) [1]
+A implementação utiliza Transformada de Fourier (FFT) para aplicar filtros passa-baixa e passa-alta do tipo Gaussiano no domínio da frequência.
 
-- imagemHibrida.py:
+Este projeto foi desenvolvido na disciplina DIM0141 - Visão Computacional.
 
-	- **entrada:** o nome de dois arquivos de imagens. Ambas devem possuir mesmo tamanho.
-		- Caso acrescente parâmetros adicionais, descrevê-los na seção parâmetros deste README.md
-	- **saída:** exibir na tela a imagem híbrida, construída conforme a seguir (começo da seção 2 de [1]):
-		- A hybrid image (H) is obtained by combining two images (I1 and I2), one filtered with a low-pass filter (G1) and the second one filtered with a high-pass filter (1-G2): H = I1G1 + I2(1-G2), the operations are defined in the Fourier domain.
-	- **observação:** detalhes adicionais descritos no artigo são opcionais.
+## Bibliotecas e pacotes
+```
+opencv-python
+numpy
+matplotlib
+```
+## Execução
 
-# Parâmetros
+O script recebe duas imagens como parâmetros:
+
+```bash
+python imagemHibrida.py imagem1.jpg imagem2.jpg
+```
 
 
-# Referências
 
-[1] Oliva, Aude, Antonio Torralba, and Philippe G. Schyns. "Hybrid images." ACM Transactions on Graphics (TOG) 25.3 (2006): 527-532.
+## Observações
+
+* A técnica de imagens híbridas é inspirada no trabalho de Oliva, Torralba & Schyns (2006).
+
+* A percepção varia conforme distância e escala.
+
+* Funciona melhor com imagens bem alinhadas e de conteúdo complementar.
